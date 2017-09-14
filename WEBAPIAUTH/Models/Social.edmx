@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UCM85_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CampaignDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignTypeId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Created_By" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date_Entered" Type="datetime" />
+          <Property Name="Modified_By" Type="uniqueidentifier" />
+          <Property Name="Date_Modified" Type="datetime" />
+          <Property Name="HowItWorks_Text" Type="nvarchar" MaxLength="256" />
+          <Property Name="ViewSampleSite_Text" Type="nvarchar" MaxLength="256" />
+          <Property Name="LaunchACampaign_Text" Type="nvarchar" MaxLength="256" />
+          <Property Name="ViewSampleSite_Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="LaunchACampaign_Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsGlobal" Type="bit" />
+          <Property Name="BusinessLine" Type="int" />
+          <Property Name="Campaign_Group_id" Type="int" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="CallScript" Type="nvarchar" MaxLength="2000" />
+          <Property Name="FormId" Type="int" />
+          <Property Name="MicroPortalID" Type="int" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Banner" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserViewType" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsSubRegion" Type="bit" Nullable="false" />
+          <Property Name="isNewMicrosite" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SOCIALSHARINGDETAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" />
+          <Property Name="CAMPAIGN_ID" Type="int" />
+          <Property Name="POST_ID" Type="nvarchar" MaxLength="500" />
+          <Property Name="POST_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="POST_CONTENT" Type="nvarchar(max)" />
+          <Property Name="POST_DATE" Type="datetime" />
+          <Property Name="POST_TYPE" Type="varchar" MaxLength="50" />
+          <Property Name="POST_SHARE_COUNT" Type="int" />
+          <Property Name="POST_LIKE_COUNT" Type="int" />
+          <Property Name="POST_COMMENT_COUNT" Type="int" />
+          <Property Name="ISPUBLISHED" Type="bit" />
+          <Property Name="SOCIALID" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsScheduled" Type="bit" />
+          <Property Name="CMMPostType" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostTag" Type="nvarchar" MaxLength="500" />
+          <Property Name="TIMEZONE" Type="nvarchar" MaxLength="500" />
+          <Property Name="SCHEDULEUSERDATE" Type="datetime" />
+          <Property Name="SCHEDULEPOSTDATE" Type="datetime" />
+          <Property Name="ParentPostId" Type="uniqueidentifier" />
+          <Property Name="Quarter" Type="nvarchar" MaxLength="10" />
+          <Property Name="pageid" Type="nvarchar" MaxLength="50" />
+          <Property Name="FormatType" Type="nvarchar" MaxLength="10" />
+          <Property Name="Imagepath" Type="nvarchar(max)" />
+          <Property Name="NameTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="FBDescription" Type="nvarchar(max)" />
+          <Property Name="FBCaption" Type="nvarchar" MaxLength="100" />
+          <Property Name="AllowCPImageChange" Type="bit" />
+          <Property Name="IsCreatedforCMM" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USERACCESSTOKENASSOC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USER_ID" Type="uniqueidentifier" />
+          <Property Name="CONSUMERKEY" Type="nvarchar" MaxLength="500" />
+          <Property Name="CONSUMERSECRET" Type="nvarchar" MaxLength="500" />
+          <Property Name="ACCESSTOKEN" Type="nvarchar" MaxLength="500" />
+          <Property Name="TOKENSECRET" Type="nvarchar" MaxLength="500" />
+          <Property Name="DATE_ENTERED" Type="datetime" />
+          <Property Name="SOCIAL_TYPE" Type="varchar" MaxLength="50" />
+          <Property Name="SocialId" Type="nvarchar" MaxLength="500" />
+          <Property Name="SocialAcctName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ISDELETED" Type="bit" />
+          <Property Name="associatedPageId" Type="nvarchar" MaxLength="50" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="100" />
+          <Property Name="pageaccesstoken" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DefaultCampaignID" Type="int" />
+          <Property Name="IsCorporateCMMAccount" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UCM85_dbModelStoreContainer">
+          <EntitySet Name="CampaignDetails" EntityType="Self.CampaignDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOCIALSHARINGDETAILS" EntityType="Self.SOCIALSHARINGDETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERACCESSTOKENASSOC" EntityType="Self.USERACCESSTOKENASSOC" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UCM85_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CampaignDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Created_By" Type="Guid" Nullable="false" />
+          <Property Name="Date_Entered" Type="DateTime" Precision="3" />
+          <Property Name="Modified_By" Type="Guid" />
+          <Property Name="Date_Modified" Type="DateTime" Precision="3" />
+          <Property Name="HowItWorks_Text" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ViewSampleSite_Text" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LaunchACampaign_Text" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ViewSampleSite_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LaunchACampaign_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsGlobal" Type="Boolean" />
+          <Property Name="BusinessLine" Type="Int32" />
+          <Property Name="Campaign_Group_id" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="CallScript" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="FormId" Type="Int32" />
+          <Property Name="MicroPortalID" Type="Int32" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Banner" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserViewType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsSubRegion" Type="Boolean" Nullable="false" />
+          <Property Name="isNewMicrosite" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SOCIALSHARINGDETAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Precision="3" />
+          <Property Name="CAMPAIGN_ID" Type="Int32" />
+          <Property Name="POST_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="POST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="POST_CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="POST_DATE" Type="DateTime" Precision="3" />
+          <Property Name="POST_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POST_SHARE_COUNT" Type="Int32" />
+          <Property Name="POST_LIKE_COUNT" Type="Int32" />
+          <Property Name="POST_COMMENT_COUNT" Type="Int32" />
+          <Property Name="ISPUBLISHED" Type="Boolean" />
+          <Property Name="SOCIALID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsScheduled" Type="Boolean" />
+          <Property Name="CMMPostType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostTag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TIMEZONE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SCHEDULEUSERDATE" Type="DateTime" Precision="3" />
+          <Property Name="SCHEDULEPOSTDATE" Type="DateTime" Precision="3" />
+          <Property Name="ParentPostId" Type="Guid" />
+          <Property Name="Quarter" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pageid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FormatType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FBDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FBCaption" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AllowCPImageChange" Type="Boolean" />
+          <Property Name="IsCreatedforCMM" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USERACCESSTOKENASSOC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="USER_ID" Type="Guid" />
+          <Property Name="CONSUMERKEY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CONSUMERSECRET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ACCESSTOKEN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TOKENSECRET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Precision="3" />
+          <Property Name="SOCIAL_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SocialId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SocialAcctName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ISDELETED" Type="Boolean" />
+          <Property Name="associatedPageId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pageaccesstoken" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultCampaignID" Type="Int32" />
+          <Property Name="IsCorporateCMMAccount" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UCM85_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CampaignDetails" EntityType="Self.CampaignDetails" />
+          <EntitySet Name="SOCIALSHARINGDETAILS" EntityType="Self.SOCIALSHARINGDETAILS" />
+          <EntitySet Name="USERACCESSTOKENASSOC" EntityType="Self.USERACCESSTOKENASSOC" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UCM85_dbModelStoreContainer" CdmEntityContainer="UCM85_dbEntities">
+          <EntitySetMapping Name="CampaignDetails">
+            <EntityTypeMapping TypeName="UCM85_dbModel.CampaignDetails">
+              <MappingFragment StoreEntitySet="CampaignDetails">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CampaignTypeId" ColumnName="CampaignTypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Date_Entered" ColumnName="Date_Entered" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+                <ScalarProperty Name="Date_Modified" ColumnName="Date_Modified" />
+                <ScalarProperty Name="HowItWorks_Text" ColumnName="HowItWorks_Text" />
+                <ScalarProperty Name="ViewSampleSite_Text" ColumnName="ViewSampleSite_Text" />
+                <ScalarProperty Name="LaunchACampaign_Text" ColumnName="LaunchACampaign_Text" />
+                <ScalarProperty Name="ViewSampleSite_Url" ColumnName="ViewSampleSite_Url" />
+                <ScalarProperty Name="LaunchACampaign_Url" ColumnName="LaunchACampaign_Url" />
+                <ScalarProperty Name="IsGlobal" ColumnName="IsGlobal" />
+                <ScalarProperty Name="BusinessLine" ColumnName="BusinessLine" />
+                <ScalarProperty Name="Campaign_Group_id" ColumnName="Campaign_Group_id" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="CallScript" ColumnName="CallScript" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="MicroPortalID" ColumnName="MicroPortalID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Banner" ColumnName="Banner" />
+                <ScalarProperty Name="UserViewType" ColumnName="UserViewType" />
+                <ScalarProperty Name="IsSubRegion" ColumnName="IsSubRegion" />
+                <ScalarProperty Name="isNewMicrosite" ColumnName="isNewMicrosite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOCIALSHARINGDETAILS">
+            <EntityTypeMapping TypeName="UCM85_dbModel.SOCIALSHARINGDETAILS">
+              <MappingFragment StoreEntitySet="SOCIALSHARINGDETAILS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+                <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+                <ScalarProperty Name="POST_NAME" ColumnName="POST_NAME" />
+                <ScalarProperty Name="POST_CONTENT" ColumnName="POST_CONTENT" />
+                <ScalarProperty Name="POST_DATE" ColumnName="POST_DATE" />
+                <ScalarProperty Name="POST_TYPE" ColumnName="POST_TYPE" />
+                <ScalarProperty Name="POST_SHARE_COUNT" ColumnName="POST_SHARE_COUNT" />
+                <ScalarProperty Name="POST_LIKE_COUNT" ColumnName="POST_LIKE_COUNT" />
+                <ScalarProperty Name="POST_COMMENT_COUNT" ColumnName="POST_COMMENT_COUNT" />
+                <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+                <ScalarProperty Name="SOCIALID" ColumnName="SOCIALID" />
+                <ScalarProperty Name="IsScheduled" ColumnName="IsScheduled" />
+                <ScalarProperty Name="CMMPostType" ColumnName="CMMPostType" />
+                <ScalarProperty Name="PostTag" ColumnName="PostTag" />
+                <ScalarProperty Name="TIMEZONE" ColumnName="TIMEZONE" />
+                <ScalarProperty Name="SCHEDULEUSERDATE" ColumnName="SCHEDULEUSERDATE" />
+                <ScalarProperty Name="SCHEDULEPOSTDATE" ColumnName="SCHEDULEPOSTDATE" />
+                <ScalarProperty Name="ParentPostId" ColumnName="ParentPostId" />
+                <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+                <ScalarProperty Name="pageid" ColumnName="pageid" />
+                <ScalarProperty Name="FormatType" ColumnName="FormatType" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+                <ScalarProperty Name="NameTitle" ColumnName="NameTitle" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="FBDescription" ColumnName="FBDescription" />
+                <ScalarProperty Name="FBCaption" ColumnName="FBCaption" />
+                <ScalarProperty Name="AllowCPImageChange" ColumnName="AllowCPImageChange" />
+                <ScalarProperty Name="IsCreatedforCMM" ColumnName="IsCreatedforCMM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERACCESSTOKENASSOC">
+            <EntityTypeMapping TypeName="UCM85_dbModel.USERACCESSTOKENASSOC">
+              <MappingFragment StoreEntitySet="USERACCESSTOKENASSOC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CONSUMERKEY" ColumnName="CONSUMERKEY" />
+                <ScalarProperty Name="CONSUMERSECRET" ColumnName="CONSUMERSECRET" />
+                <ScalarProperty Name="ACCESSTOKEN" ColumnName="ACCESSTOKEN" />
+                <ScalarProperty Name="TOKENSECRET" ColumnName="TOKENSECRET" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="SOCIAL_TYPE" ColumnName="SOCIAL_TYPE" />
+                <ScalarProperty Name="SocialId" ColumnName="SocialId" />
+                <ScalarProperty Name="SocialAcctName" ColumnName="SocialAcctName" />
+                <ScalarProperty Name="ISDELETED" ColumnName="ISDELETED" />
+                <ScalarProperty Name="associatedPageId" ColumnName="associatedPageId" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="pageaccesstoken" ColumnName="pageaccesstoken" />
+                <ScalarProperty Name="DefaultCampaignID" ColumnName="DefaultCampaignID" />
+                <ScalarProperty Name="IsCorporateCMMAccount" ColumnName="IsCorporateCMMAccount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

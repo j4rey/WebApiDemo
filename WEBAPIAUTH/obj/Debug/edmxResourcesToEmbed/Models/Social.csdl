@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UCM85_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CampaignDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CampaignTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="Created_By" Type="Guid" Nullable="false" />
+    <Property Name="Date_Entered" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="Guid" />
+    <Property Name="Date_Modified" Type="DateTime" Precision="3" />
+    <Property Name="HowItWorks_Text" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ViewSampleSite_Text" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LaunchACampaign_Text" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ViewSampleSite_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LaunchACampaign_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsGlobal" Type="Boolean" />
+    <Property Name="BusinessLine" Type="Int32" />
+    <Property Name="Campaign_Group_id" Type="Int32" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="CallScript" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="FormId" Type="Int32" />
+    <Property Name="MicroPortalID" Type="Int32" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Banner" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserViewType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsSubRegion" Type="Boolean" Nullable="false" />
+    <Property Name="isNewMicrosite" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOCIALSHARINGDETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Precision="3" />
+    <Property Name="CAMPAIGN_ID" Type="Int32" />
+    <Property Name="POST_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="POST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="POST_CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="POST_DATE" Type="DateTime" Precision="3" />
+    <Property Name="POST_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="POST_SHARE_COUNT" Type="Int32" />
+    <Property Name="POST_LIKE_COUNT" Type="Int32" />
+    <Property Name="POST_COMMENT_COUNT" Type="Int32" />
+    <Property Name="ISPUBLISHED" Type="Boolean" />
+    <Property Name="SOCIALID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsScheduled" Type="Boolean" />
+    <Property Name="CMMPostType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostTag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TIMEZONE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SCHEDULEUSERDATE" Type="DateTime" Precision="3" />
+    <Property Name="SCHEDULEPOSTDATE" Type="DateTime" Precision="3" />
+    <Property Name="ParentPostId" Type="Guid" />
+    <Property Name="Quarter" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="pageid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FormatType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Imagepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NameTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FBDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FBCaption" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AllowCPImageChange" Type="Boolean" />
+    <Property Name="IsCreatedforCMM" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USERACCESSTOKENASSOC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="USER_ID" Type="Guid" />
+    <Property Name="CONSUMERKEY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CONSUMERSECRET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ACCESSTOKEN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TOKENSECRET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Precision="3" />
+    <Property Name="SOCIAL_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SocialId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SocialAcctName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ISDELETED" Type="Boolean" />
+    <Property Name="associatedPageId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="pageaccesstoken" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultCampaignID" Type="Int32" />
+    <Property Name="IsCorporateCMMAccount" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="UCM85_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CampaignDetails" EntityType="Self.CampaignDetails" />
+    <EntitySet Name="SOCIALSHARINGDETAILS" EntityType="Self.SOCIALSHARINGDETAILS" />
+    <EntitySet Name="USERACCESSTOKENASSOC" EntityType="Self.USERACCESSTOKENASSOC" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UCM85_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CampaignDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CampaignTypeId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="Created_By" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Date_Entered" Type="datetime" />
+    <Property Name="Modified_By" Type="uniqueidentifier" />
+    <Property Name="Date_Modified" Type="datetime" />
+    <Property Name="HowItWorks_Text" Type="nvarchar" MaxLength="256" />
+    <Property Name="ViewSampleSite_Text" Type="nvarchar" MaxLength="256" />
+    <Property Name="LaunchACampaign_Text" Type="nvarchar" MaxLength="256" />
+    <Property Name="ViewSampleSite_Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="LaunchACampaign_Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsGlobal" Type="bit" />
+    <Property Name="BusinessLine" Type="int" />
+    <Property Name="Campaign_Group_id" Type="int" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="CallScript" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FormId" Type="int" />
+    <Property Name="MicroPortalID" Type="int" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Banner" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserViewType" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsSubRegion" Type="bit" Nullable="false" />
+    <Property Name="isNewMicrosite" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOCIALSHARINGDETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DELETED" Type="bit" />
+    <Property Name="CREATED_BY" Type="uniqueidentifier" />
+    <Property Name="DATE_ENTERED" Type="datetime" />
+    <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+    <Property Name="DATE_MODIFIED" Type="datetime" />
+    <Property Name="CAMPAIGN_ID" Type="int" />
+    <Property Name="POST_ID" Type="nvarchar" MaxLength="500" />
+    <Property Name="POST_NAME" Type="nvarchar" MaxLength="500" />
+    <Property Name="POST_CONTENT" Type="nvarchar(max)" />
+    <Property Name="POST_DATE" Type="datetime" />
+    <Property Name="POST_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="POST_SHARE_COUNT" Type="int" />
+    <Property Name="POST_LIKE_COUNT" Type="int" />
+    <Property Name="POST_COMMENT_COUNT" Type="int" />
+    <Property Name="ISPUBLISHED" Type="bit" />
+    <Property Name="SOCIALID" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsScheduled" Type="bit" />
+    <Property Name="CMMPostType" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostTag" Type="nvarchar" MaxLength="500" />
+    <Property Name="TIMEZONE" Type="nvarchar" MaxLength="500" />
+    <Property Name="SCHEDULEUSERDATE" Type="datetime" />
+    <Property Name="SCHEDULEPOSTDATE" Type="datetime" />
+    <Property Name="ParentPostId" Type="uniqueidentifier" />
+    <Property Name="Quarter" Type="nvarchar" MaxLength="10" />
+    <Property Name="pageid" Type="nvarchar" MaxLength="50" />
+    <Property Name="FormatType" Type="nvarchar" MaxLength="10" />
+    <Property Name="Imagepath" Type="nvarchar(max)" />
+    <Property Name="NameTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar(max)" />
+    <Property Name="FBDescription" Type="nvarchar(max)" />
+    <Property Name="FBCaption" Type="nvarchar" MaxLength="100" />
+    <Property Name="AllowCPImageChange" Type="bit" />
+    <Property Name="IsCreatedforCMM" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USERACCESSTOKENASSOC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="USER_ID" Type="uniqueidentifier" />
+    <Property Name="CONSUMERKEY" Type="nvarchar" MaxLength="500" />
+    <Property Name="CONSUMERSECRET" Type="nvarchar" MaxLength="500" />
+    <Property Name="ACCESSTOKEN" Type="nvarchar" MaxLength="500" />
+    <Property Name="TOKENSECRET" Type="nvarchar" MaxLength="500" />
+    <Property Name="DATE_ENTERED" Type="datetime" />
+    <Property Name="SOCIAL_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="SocialId" Type="nvarchar" MaxLength="500" />
+    <Property Name="SocialAcctName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ISDELETED" Type="bit" />
+    <Property Name="associatedPageId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="100" />
+    <Property Name="pageaccesstoken" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DefaultCampaignID" Type="int" />
+    <Property Name="IsCorporateCMMAccount" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="UCM85_dbModelStoreContainer">
+    <EntitySet Name="CampaignDetails" EntityType="Self.CampaignDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOCIALSHARINGDETAILS" EntityType="Self.SOCIALSHARINGDETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERACCESSTOKENASSOC" EntityType="Self.USERACCESSTOKENASSOC" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UCM85_dbModelStoreContainer" CdmEntityContainer="UCM85_dbEntities">
+    <EntitySetMapping Name="CampaignDetails">
+      <EntityTypeMapping TypeName="UCM85_dbModel.CampaignDetails">
+        <MappingFragment StoreEntitySet="CampaignDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CampaignTypeId" ColumnName="CampaignTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Date_Entered" ColumnName="Date_Entered" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Date_Modified" ColumnName="Date_Modified" />
+          <ScalarProperty Name="HowItWorks_Text" ColumnName="HowItWorks_Text" />
+          <ScalarProperty Name="ViewSampleSite_Text" ColumnName="ViewSampleSite_Text" />
+          <ScalarProperty Name="LaunchACampaign_Text" ColumnName="LaunchACampaign_Text" />
+          <ScalarProperty Name="ViewSampleSite_Url" ColumnName="ViewSampleSite_Url" />
+          <ScalarProperty Name="LaunchACampaign_Url" ColumnName="LaunchACampaign_Url" />
+          <ScalarProperty Name="IsGlobal" ColumnName="IsGlobal" />
+          <ScalarProperty Name="BusinessLine" ColumnName="BusinessLine" />
+          <ScalarProperty Name="Campaign_Group_id" ColumnName="Campaign_Group_id" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="CallScript" ColumnName="CallScript" />
+          <ScalarProperty Name="FormId" ColumnName="FormId" />
+          <ScalarProperty Name="MicroPortalID" ColumnName="MicroPortalID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Banner" ColumnName="Banner" />
+          <ScalarProperty Name="UserViewType" ColumnName="UserViewType" />
+          <ScalarProperty Name="IsSubRegion" ColumnName="IsSubRegion" />
+          <ScalarProperty Name="isNewMicrosite" ColumnName="isNewMicrosite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIALSHARINGDETAILS">
+      <EntityTypeMapping TypeName="UCM85_dbModel.SOCIALSHARINGDETAILS">
+        <MappingFragment StoreEntitySet="SOCIALSHARINGDETAILS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+          <ScalarProperty Name="POST_NAME" ColumnName="POST_NAME" />
+          <ScalarProperty Name="POST_CONTENT" ColumnName="POST_CONTENT" />
+          <ScalarProperty Name="POST_DATE" ColumnName="POST_DATE" />
+          <ScalarProperty Name="POST_TYPE" ColumnName="POST_TYPE" />
+          <ScalarProperty Name="POST_SHARE_COUNT" ColumnName="POST_SHARE_COUNT" />
+          <ScalarProperty Name="POST_LIKE_COUNT" ColumnName="POST_LIKE_COUNT" />
+          <ScalarProperty Name="POST_COMMENT_COUNT" ColumnName="POST_COMMENT_COUNT" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+          <ScalarProperty Name="SOCIALID" ColumnName="SOCIALID" />
+          <ScalarProperty Name="IsScheduled" ColumnName="IsScheduled" />
+          <ScalarProperty Name="CMMPostType" ColumnName="CMMPostType" />
+          <ScalarProperty Name="PostTag" ColumnName="PostTag" />
+          <ScalarProperty Name="TIMEZONE" ColumnName="TIMEZONE" />
+          <ScalarProperty Name="SCHEDULEUSERDATE" ColumnName="SCHEDULEUSERDATE" />
+          <ScalarProperty Name="SCHEDULEPOSTDATE" ColumnName="SCHEDULEPOSTDATE" />
+          <ScalarProperty Name="ParentPostId" ColumnName="ParentPostId" />
+          <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+          <ScalarProperty Name="pageid" ColumnName="pageid" />
+          <ScalarProperty Name="FormatType" ColumnName="FormatType" />
+          <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+          <ScalarProperty Name="NameTitle" ColumnName="NameTitle" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="FBDescription" ColumnName="FBDescription" />
+          <ScalarProperty Name="FBCaption" ColumnName="FBCaption" />
+          <ScalarProperty Name="AllowCPImageChange" ColumnName="AllowCPImageChange" />
+          <ScalarProperty Name="IsCreatedforCMM" ColumnName="IsCreatedforCMM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERACCESSTOKENASSOC">
+      <EntityTypeMapping TypeName="UCM85_dbModel.USERACCESSTOKENASSOC">
+        <MappingFragment StoreEntitySet="USERACCESSTOKENASSOC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="CONSUMERKEY" ColumnName="CONSUMERKEY" />
+          <ScalarProperty Name="CONSUMERSECRET" ColumnName="CONSUMERSECRET" />
+          <ScalarProperty Name="ACCESSTOKEN" ColumnName="ACCESSTOKEN" />
+          <ScalarProperty Name="TOKENSECRET" ColumnName="TOKENSECRET" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="SOCIAL_TYPE" ColumnName="SOCIAL_TYPE" />
+          <ScalarProperty Name="SocialId" ColumnName="SocialId" />
+          <ScalarProperty Name="SocialAcctName" ColumnName="SocialAcctName" />
+          <ScalarProperty Name="ISDELETED" ColumnName="ISDELETED" />
+          <ScalarProperty Name="associatedPageId" ColumnName="associatedPageId" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="pageaccesstoken" ColumnName="pageaccesstoken" />
+          <ScalarProperty Name="DefaultCampaignID" ColumnName="DefaultCampaignID" />
+          <ScalarProperty Name="IsCorporateCMMAccount" ColumnName="IsCorporateCMMAccount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
