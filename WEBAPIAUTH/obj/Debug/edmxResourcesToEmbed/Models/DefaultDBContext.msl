@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CustomUsers">
+      <EntityTypeMapping TypeName="Model.CustomUser">
+        <MappingFragment StoreEntitySet="CustomUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomRole_User">
+      <EntityTypeMapping TypeName="Model.CustomRole_User">
+        <MappingFragment StoreEntitySet="CustomRole_User">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomRoles">
+      <EntityTypeMapping TypeName="Model.CustomRole">
+        <MappingFragment StoreEntitySet="CustomRoles">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
